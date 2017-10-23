@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddLead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formurl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagetitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLeadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddLeadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityListt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fetchxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityListtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityListtResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddLeadSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLead" />
+  </wsdl:message>
+  <wsdl:message name="AddLeadSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityList" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityListtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityListt" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityListtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityListtResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QCRMWebServiceSoap">
+    <wsdl:operation name="AddLead">
+      <wsdl:input message="tns:AddLeadSoapIn" />
+      <wsdl:output message="tns:AddLeadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityList">
+      <wsdl:input message="tns:GetEntityListSoapIn" />
+      <wsdl:output message="tns:GetEntityListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityListt">
+      <wsdl:input message="tns:GetEntityListtSoapIn" />
+      <wsdl:output message="tns:GetEntityListtSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QCRMWebServiceSoap" type="tns:QCRMWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddLead">
+      <soap:operation soapAction="http://tempuri.org/AddLead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityList">
+      <soap:operation soapAction="http://tempuri.org/GetEntityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityListt">
+      <soap:operation soapAction="http://tempuri.org/GetEntityListt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QCRMWebServiceSoap12" type="tns:QCRMWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddLead">
+      <soap12:operation soapAction="http://tempuri.org/AddLead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityList">
+      <soap12:operation soapAction="http://tempuri.org/GetEntityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityListt">
+      <soap12:operation soapAction="http://tempuri.org/GetEntityListt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QCRMWebService">
+    <wsdl:port name="QCRMWebServiceSoap" binding="tns:QCRMWebServiceSoap">
+      <soap:address location="http://10.10.1.86:8082/QCRMWebService.Asmx" />
+    </wsdl:port>
+    <wsdl:port name="QCRMWebServiceSoap12" binding="tns:QCRMWebServiceSoap12">
+      <soap12:address location="http://10.10.1.86:8082/QCRMWebService.Asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
